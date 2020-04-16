@@ -1,0 +1,72 @@
+.overall_rating .num {
+    font-size: 30px;
+    font-weight: bold;
+    color: #F5A624;
+}
+.overall_rating .stars {
+    letter-spacing: 3px;
+    font-size: 32px;
+    color: #F5A624;
+    padding: 0 5px 0 5px;
+}
+.overall_rating .total {
+    color: #777777;
+    font-size: 14px;
+}
+.write_review_btn, .reviews .write_review button {
+    display: inline-block;
+    background-color: #565656;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 0 0 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0;
+}
+ .write_review_btn:hover, .reviews .write_review button:hover {
+    background-color: #636363;
+}
+.write_review {
+    display: none;
+    padding: 20px 0 10px 0;
+}
+.write_review textarea {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 100px;
+    margin-top: 10px;
+}
+.write_review input {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.write_review button {
+    cursor: pointer;
+}
+.review {
+    padding: 20px 0;
+    border-bottom: 1px solid #4A4949;
+}
+.review .name {
+    padding: 0 0 3px 0;
+    margin: 0;
+    font-size: 18px;
+    color: #555555;
+}
+.review .rating {
+    letter-spacing: 3px;
+    font-size: 20px;
+    color: #F5A624;
+}
+
+.review .content {
+    padding: 5px 0;
+}

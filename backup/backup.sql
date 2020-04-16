@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2020 at 11:06 PM
+-- Generation Time: Apr 14, 2020 at 09:53 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -69,7 +69,15 @@ INSERT INTO `bill` (`bill_no`, `o_id`, `c_id`, `total_amount`, `status`, `date`)
 (16, 16, 12, 100, 1, '2020-04-03'),
 (17, 17, 12, 360, 1, '2020-04-04'),
 (18, 18, 12, 50, 1, '2020-04-05'),
-(19, 19, 12, 280, 1, '2020-04-05');
+(19, 19, 12, 280, 1, '2020-04-05'),
+(20, 20, 12, 720, 1, '2020-04-11'),
+(21, 21, 12, 670, 1, '2020-04-11'),
+(22, 22, 14, 190, 1, '2020-04-12'),
+(23, 23, 15, 100, 1, '2020-04-13'),
+(24, 24, 16, 290, 1, '2020-04-13'),
+(26, 26, 16, 140, 1, '2020-04-14'),
+(27, 27, 12, 420, 1, '2020-04-14'),
+(28, 28, 12, 120, 1, '2020-04-15');
 
 -- --------------------------------------------------------
 
@@ -90,7 +98,10 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`c_id`, `name`, `address`, `phone_no`, `password`) VALUES
-(12, 'Vishruth', '#925, 7th Cross, 13th Main, Gokula, 1st Stage, 1st Phase,\r\nHMT Layout, Mathikere', '7411033883', '$2y$10$3/4RZ8pLZHQiuloXnbrGz.xOMTxZr9yOT6o58yWTmflRqEVS64rDq');
+(12, 'Vishruth', '#925, 7th Cross, 13th Main, Gokula, 1st Stage, 1st Phase,\r\nHMT Layout, Mathikere', '7411033883', '$2y$10$3/4RZ8pLZHQiuloXnbrGz.xOMTxZr9yOT6o58yWTmflRqEVS64rDq'),
+(14, 'shrisha', '#1008, 7th Cross, 6th Block, Nanjappa Circle, Vidyaranyapura, Bangalore', '9480103177', '$2y$10$30jljKECeFf2OQXKzV9yfuh3G4MAE7iEq0Stv3EI1lxvnItqViwSy'),
+(15, 'gagan', 'mathikere bangalore', '9902817295', '$2y$10$YJD8mRCLSrUAd9/Omd03D.8oZJb4xMxL3o1va6LrxHpDeo3ad0eBK'),
+(16, 'Sheela', '6th Cross , 7th Block, Vidyaranyapura, Bengaluru - 560024', '9986426795', '$2y$10$zalVcoOmjriOUXKyOialuOp0gXCcKj7Jg.qI.OXNz2T4mrIMNkfmO');
 
 -- --------------------------------------------------------
 
@@ -112,8 +123,7 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`im_id`, `i_name`, `category`, `price`, `image`, `status`) VALUES
-(25, 'Idli Vada', 'sanman', 60, 'img/item/2020-04-03 09-18-21_idli_vada_sanman.jpg', 1),
-(55, 'Masala Dosa', 'sanman', 60, 'img/item/2020-04-04 10-47-51_masala_dosa.jpg', 1),
+(55, 'Masala Dosa', 'sanman', 50, 'img/item/2020-04-04 10-47-51_masala_dosa.jpg', 1),
 (56, 'Rava Idli', 'sanman', 45, 'img/item/2020-04-04 10-48-16_rava_idli_sanman.jpg', 1),
 (57, 'Bonda Soup', 'sanman', 50, 'img/item/2020-04-04 10-48-55_bonda_soup.jpg', 1),
 (58, 'Pongal', 'sanman', 60, 'img/item/2020-04-04 10-49-21_pongal_sanman.jpg', 1),
@@ -141,7 +151,8 @@ INSERT INTO `item` (`im_id`, `i_name`, `category`, `price`, `image`, `status`) V
 (80, 'Dhokla', 'agarwal', 45, 'img/item/2020-04-04 11-02-42_dhokla_agarwal.jpg', 1),
 (81, 'Bhel Puri', 'agarwal', 45, 'img/item/2020-04-04 11-03-18_bhel_puri_agarwal.jpg', 1),
 (82, 'Badam Milk', 'agarwal', 30, 'img/item/2020-04-04 11-03-43_Badam-Milk-Shake.jpg', 1),
-(83, 'Pani Puri', 'agarwal', 50, 'img/item/2020-04-04 11-05-28_pani_puri_agarwal.jpg', 1);
+(83, 'Pani Puri', 'agarwal', 50, 'img/item/2020-04-04 11-05-28_pani_puri_agarwal.jpg', 1),
+(84, 'Idli Vada', 'sanman', 45, 'img/item/2020-04-11 05-35-50_Idli-Vada_SANMAN.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -167,7 +178,15 @@ INSERT INTO `order` (`o_id`, `c_id`) VALUES
 (16, 12),
 (17, 12),
 (18, 12),
-(19, 12);
+(19, 12),
+(20, 12),
+(21, 12),
+(27, 12),
+(28, 12),
+(22, 14),
+(23, 15),
+(24, 16),
+(26, 16);
 
 -- --------------------------------------------------------
 
@@ -188,8 +207,44 @@ CREATE TABLE `order_master` (
 --
 
 INSERT INTO `order_master` (`om_id`, `o_id`, `im_id`, `quantity`, `date`) VALUES
-(26, 16, 25, 2, '2020-04-03'),
-(29, 19, 25, 2, '2020-04-05');
+(33, 20, 55, 12, '2020-04-11'),
+(34, 21, 64, 1, '2020-04-11'),
+(35, 21, 65, 2, '2020-04-11'),
+(36, 22, 55, 2, '2020-04-12'),
+(37, 22, 56, 2, '2020-04-12'),
+(38, 23, 55, 2, '2020-04-13'),
+(39, 24, 55, 1, '2020-04-13'),
+(40, 24, 56, 2, '2020-04-13'),
+(41, 24, 57, 3, '2020-04-13'),
+(45, 26, 74, 1, '2020-04-14'),
+(46, 26, 75, 2, '2020-04-14'),
+(47, 27, 64, 2, '2020-04-14'),
+(48, 28, 60, 2, '2020-04-15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `name` varchar(25) DEFAULT NULL,
+  `review` varchar(500) DEFAULT NULL,
+  `pos` double DEFAULT NULL,
+  `neu` double DEFAULT NULL,
+  `neg` double DEFAULT NULL,
+  `dominant` varchar(10) DEFAULT NULL,
+  `star` int(11) DEFAULT NULL,
+  `rid` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`name`, `review`, `pos`, `neu`, `neg`, `dominant`, `star`, `rid`) VALUES
+('Vishruth', 'Delivery was very quick', 0.25, 0.501, 0.25, 'neu', 4, 7),
+('Sheela', 'Delivery was quick', 0.25, 0.501, 0.25, 'neu', 4, 10);
 
 -- --------------------------------------------------------
 
@@ -252,6 +307,12 @@ ALTER TABLE `order_master`
   ADD KEY `order_master_ibfk_2` (`im_id`);
 
 --
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`rid`);
+
+--
 -- Indexes for table `todays_special`
 --
 ALTER TABLE `todays_special`
@@ -272,31 +333,37 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `bill_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `im_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `im_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `o_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `o_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `order_master`
 --
 ALTER TABLE `order_master`
-  MODIFY `om_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `om_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `rid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `todays_special`
